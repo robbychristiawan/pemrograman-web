@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jelajahi menu pilihan Dapur Rasa Foodcourt.">
+  <title>Dapur Rasa Foodcourt</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #243128;
+      --muted: #68756b;
+      --green: #315b42;
+      --cream: #f8f6ef;
+      --line: #e8e8df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 390px;
+      display: grid;
+      align-items: center;
+      padding: 52px max(7vw, 24px);
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(22, 39, 27, .88), rgba(22, 39, 27, .18)),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1800&q=85") center 52% / cover;
+    }
+
+    .hero-content {
+      width: min(100%, 620px);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #e8c986;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      line-height: 1.05;
+    }
+
+    .hero-content > p:not(.eyebrow) {
+      max-width: 480px;
+      margin: 18px 0 26px;
+      color: rgba(255, 255, 255, .88);
+      font-size: 1.08rem;
+    }
+
+    .location-link {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 6px;
+      background: #e8c986;
+      color: #26372a;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color .2s ease, transform .2s ease;
+    }
+
+    .location-link:hover {
+      background: #f3d99f;
+      transform: translateY(-2px);
+    }
+
+    main {
+      width: min(1100px, calc(100% - 40px));
+      margin: 64px auto 76px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading p {
+      margin: 0 0 5px;
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.2;
+    }
+
+    .section-note {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 12px 32px rgba(36, 49, 40, .06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    caption {
+      padding: 0;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    th,
+    td {
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    thead th {
+      background: #f0f3ed;
+      color: var(--green);
+      font-size: .82rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:hover {
+      background: #fcfcf8;
+    }
+
+    .menu-photo {
+      display: block;
+      width: 92px;
+      height: 68px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .menu-name {
+      display: block;
+      font-weight: 700;
+    }
+
+    .menu-description {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .price {
+      color: var(--green);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 22px 20px;
+      background: #243b2c;
+      color: rgba(255, 255, 255, .82);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        min-height: 360px;
+      }
+
+      main {
+        width: min(100% - 28px, 1100px);
+        margin: 46px auto 56px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 9px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+      }
+
+      .menu-photo {
+        width: 72px;
+        height: 58px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Makan enak, suasana hangat</p>
+      <h1>Dapur Rasa<br>Foodcourt</h1>
+      <p>Pilihan hidangan favorit dengan cita rasa rumahan, disajikan segar untuk menemani harimu.</p>
+      <a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=foodcourt+terdekat" target="_blank" rel="noopener noreferrer">
+        Akses Foodcourt di Google Maps
+      </a>
+    </div>
+  </header>
+
+  <main id="menu">
+    <section aria-labelledby="menu-title">
+      <div class="section-heading">
+        <div>
+          <p>Menu pilihan</p>
+          <h2 id="menu-title">Hidangan favorit</h2>
+        </div>
+        <p class="section-note">Semua harga dalam Rupiah (IDR).</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Daftar menu makanan, deskripsi, dan harga Dapur Rasa Foodcourt</caption>
+          <thead>
+            <tr>
+              <th scope="col">Gambar</th>
+              <th scope="col">Menu makanan</th>
+              <th scope="col">Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img class="menu-photo" src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&amp;fit=crop&amp;w=240&amp;h=180&amp;q=80" alt="Nasi goreng dengan telur dan sayuran" loading="lazy">
+              </td>
+              <td>
+                <span class="menu-name">Nasi Goreng Spesial</span>
+                <span class="menu-description">Nasi berbumbu, telur, ayam, dan sayuran.</span>
+              </td>
+              <td class="price">Rp 28.000</td>
+            </tr>
+            <tr>
+              <td>
+                <img class="menu-photo" src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&amp;fit=crop&amp;w=240&amp;h=180&amp;q=80" alt="Mie dengan sayuran dan taburan pelengkap" loading="lazy">
+              </td>
+              <td>
+                <span class="menu-name">Mie Goreng Jawa</span>
+                <span class="menu-description">Mie goreng gurih dengan sayuran segar.</span>
+              </td>
+              <td class="price">Rp 25.000</td>
+            </tr>
+            <tr>
+              <td>
+                <img class="menu-photo" src="https://images.unsplash.com/photo-1529563021893-cc83c992d75d?auto=format&amp;fit=crop&amp;w=240&amp;h=180&amp;q=80" alt="Sajian sate dengan bumbu kacang" loading="lazy">
+              </td>
+              <td>
+                <span class="menu-name">Sate Ayam</span>
+                <span class="menu-description">Sepuluh tusuk sate ayam dengan bumbu kacang.</span>
+              </td>
+              <td class="price">Rp 32.000</td>
+            </tr>
+            <tr>
+              <td>
+                <img class="menu-photo" src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&amp;fit=crop&amp;w=240&amp;h=180&amp;q=80" alt="Segelas teh dingin yang menyegarkan" loading="lazy">
+              </td>
+              <td>
+                <span class="menu-name">Es Teh Manis</span>
+                <span class="menu-description">Teh pilihan disajikan dingin dan menyegarkan.</span>
+              </td>
+              <td class="price">Rp 8.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dapur Rasa Foodcourt. Dibuat oleh Robby Christiawan.</p>
+  </footer>
+</body>
+</html>
